@@ -1,10 +1,13 @@
 import Header from './components/Header'
+import { ModeProvider } from './context/ModeContext';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-    </div>
+    <ModeProvider>
+      <div className="App">
+        <Header />
+      </div>
+    </ModeProvider>
   );
 }
 

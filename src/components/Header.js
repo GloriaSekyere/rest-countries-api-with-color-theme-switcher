@@ -1,14 +1,17 @@
+import { useMode } from '../hooks/useMode'
+
 // assets
 import LightMode from '../assets/lightMode.svg'
 
 //styles
 import './Header.css';
 
-import React from 'react'
 
 function Header() {
+  const { color } = useMode()
+
   return (
-    <div className='header'>
+    <div className='header' style={{background: color}}>
       <h1>Where in the world?</h1>
       <div className='mode-selector'>
         <img src={LightMode} alt="light-mode-icon" />
