@@ -1,7 +1,8 @@
 import { useMode } from './hooks/useMode';
 
-//styles 
+//components
 import Header from './components/Header'
+import CountryList from './components/CountryList';
 
 function App() {
   const { mode } = useMode()
@@ -9,6 +10,7 @@ function App() {
   return (
     <div className={`App ${mode}`}>
       <Header />
+      <CountryList />
     </div>
   );
 }
