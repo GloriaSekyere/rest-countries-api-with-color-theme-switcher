@@ -1,13 +1,15 @@
+import { useMode } from './hooks/useMode';
+
+//styles 
 import Header from './components/Header'
-import { ModeProvider } from './context/ModeContext';
 
 function App() {
+  const { mode } = useMode()
+
   return (
-    <ModeProvider>
-      <div className="App">
-        <Header />
-      </div>
-    </ModeProvider>
+    <div className={`App ${mode}`}>
+      <Header />
+    </div>
   );
 }
 

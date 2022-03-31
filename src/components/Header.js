@@ -8,12 +8,12 @@ import './Header.css';
 
 
 function Header() {
-  const { color } = useMode()
+  const { toggleMode } = useMode()
 
   return (
-    <div className='header' style={{background: color}}>
+    <div className='header'>
       <h1>Where in the world?</h1>
-      <div className='mode-selector'>
+      <div className='mode-selector' onClick={() => toggleMode()}>
         <img src={LightMode} alt="light-mode-icon" />
         <span>Dark Mode</span>
       </div>
