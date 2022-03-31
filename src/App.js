@@ -1,8 +1,11 @@
 import { useMode } from './hooks/useMode';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 //components
 import Header from './components/Header'
-import CountryList from './components/CountryList';
+import Home from './pages/home/Home';
+import Search from './pages/search/Search';
+import Country from './pages/country/Country';
 
 function App() {
   const { mode } = useMode()
@@ -10,7 +13,19 @@ function App() {
   return (
     <div className={`App ${mode}`}>
       <Header />
-      <CountryList />
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/search">
+            <Search />
+          </Route>
+          <Route path="/country/:id">
+            <Country />
+          </Route>
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
