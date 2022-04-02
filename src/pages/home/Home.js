@@ -7,10 +7,6 @@ import './Home.css';
 function Home() {
   const { data: countries, isPending, error } = useFetch("https://restcountries.com/v2/all")
 
-  if (countries) {
-    console.log(countries)
-  }
-
   return (
     <div className='home'>
       {isPending && <p>Loading countries...</p>}
