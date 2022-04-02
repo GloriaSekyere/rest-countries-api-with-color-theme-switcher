@@ -7,6 +7,9 @@ import Home from './pages/home/Home';
 import Search from './pages/search/Search';
 import Country from './pages/country/Country';
 
+//styles
+import './App.css'
+
 function App() {
   const { mode } = useMode()
 

@@ -1,0 +1,7 @@
+.light {
+  background-color: var(--very-light-gray);
+}
+
+.dark {
+  background-color: var(--very-dark-blue-dark-mode-bg);
+}
