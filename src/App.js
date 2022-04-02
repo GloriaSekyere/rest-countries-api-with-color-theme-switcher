@@ -24,7 +24,7 @@ function App() {
           <Route path="/search">
             <Search />
           </Route>
-          <Route path="/country/:id">
+          <Route path="/country/:name">
             <Country />
           </Route>
         </Switch>
