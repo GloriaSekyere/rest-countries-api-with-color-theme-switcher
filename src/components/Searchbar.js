@@ -34,6 +34,7 @@ function Searchbar() {
         className={styles['search-input']}
         type='text'
         value={search}
+        placeholder="Search for a country..."
         onChange={(e) => setSearch(e.target.value)}
       />
     </label>

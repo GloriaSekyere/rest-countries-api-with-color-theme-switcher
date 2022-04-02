@@ -1,0 +1,30 @@
+.search {
+  display: block;
+  width: 85%;
+  margin: 25px auto;
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-input {
+  border: none;
+  width: 100%;
+  height: 45px;
+  box-shadow: 0 0 10px var(--light-shadow);
+  padding-left: 15%;
+  font-size: 16px;
+}
+
+:global(.dark) .search-input {
+  background-color: var(--dark-blue);
+  box-shadow: 0 0 10px var(--dark-shadow);
+}
