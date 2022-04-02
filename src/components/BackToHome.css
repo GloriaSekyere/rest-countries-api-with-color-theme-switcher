@@ -1,0 +1,25 @@
+.back {
+  background-color: var(--white);
+  width: 100px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px 1px rgb(214, 214, 214);
+}
+
+.back img {
+  max-width: 100%;
+  height: auto;
+}
+
+.back span {
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.dark .back {
+  background-color: var(--dark-blue);
+  color: var(--white);
+  box-shadow: 0 0 10px 1px hsl(207, 24%, 16%);
+}
