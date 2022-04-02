@@ -7,11 +7,6 @@
   box-shadow: 0px 0px 10px rgb(214, 214, 214);
 }
 
-.dark .header  {
-  background-color: var(--dark-blue);
-  color: var(--white);
-}
-
 .header h1 {
   font-size: 14px;
   font-weight: 800;
@@ -29,4 +24,10 @@
 
 .header .mode-selector span {
   font-weight: 600;
+}
+
+.dark .header  {
+  background-color: var(--dark-blue);
+  color: var(--white);
+  box-shadow: 0px 0px 10px hsl(207, 24%, 16%);
 }
