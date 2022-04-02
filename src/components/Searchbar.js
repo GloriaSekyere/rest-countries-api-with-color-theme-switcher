@@ -16,7 +16,7 @@ function Searchbar() {
   const history = useHistory()
 
   const handleSearch = () => {
-    history.push(`/search/q=${search}`)
+    history.push(`/search?q=${search}`)
   }
 
   return (
