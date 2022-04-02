@@ -11,8 +11,11 @@ function Filter({ setUrl }) {
   }
 
   return (
-    <label>
-      <select name="region" onChange={e => handleRegion(e)}>
+    <label className={styles.filter}>
+      <select 
+        className={styles['filter-select']}
+        onChange={e => handleRegion(e)}
+      >
         <option value=''>Filter By Region</option>
         <option value='africa'>Africa</option>
         <option value='americas'>Americas</option>

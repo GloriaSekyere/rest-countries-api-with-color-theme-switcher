@@ -1,0 +1,13 @@
+.filter {
+  display: block;
+  width: 85%;
+  margin: auto;
+}
+
+.filter-select {
+  width: 50%;
+  height: 45px;
+  border: none;
+  padding: 0 5%;
+  box-shadow: 0 0 10px var(--light-shadow);
+}
