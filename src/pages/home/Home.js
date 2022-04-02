@@ -17,7 +17,7 @@ function Home() {
   return (
     <>
       <Searchbar />
-      <Filter setUrl={setUrl} />
+      {/* <Filter setUrl={setUrl} /> */}
       
       <div className={styles.home}>
         {isPending && <p>Loading countries...</p>}
