@@ -6,8 +6,9 @@ import styles from './CountryList.module.css';
 function CountryList({ countries }) {
   const history = useHistory()
 
-  const handleClick = (name) => {
-    history.push(`/country/${name.toLowerCase()}`)
+  const handleClick = (code) => {
+    // history.push(`/country/${name.toLowerCase()}`)
+    history.push(`/country/${code}`)
   }
   return (
     <>
@@ -15,7 +16,7 @@ function CountryList({ countries }) {
         <div 
           key={country.alpha3Code} 
           className={styles['country-card']}
-          onClick={() => handleClick(country.name)}
+          onClick={() => handleClick(country.alpha3Code)}
         >
           <div className={styles['country-flag']}>
             <img src={country.flag} alt={country.name} />
