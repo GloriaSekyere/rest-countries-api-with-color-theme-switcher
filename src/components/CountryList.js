@@ -1,7 +1,7 @@
 import { useHistory } from 'react-router-dom';
 
 //styles
-import './CountryList.css';
+import styles from './CountryList.module.css';
 
 function CountryList({ countries }) {
   const history = useHistory()
@@ -14,18 +14,18 @@ function CountryList({ countries }) {
       {countries.map(country => (
         <div 
           key={country.alpha3Code} 
-          className="country-card"
+          className={styles['country-card']}
           onClick={() => handleClick(country.name)}
         >
-          <div className='country-flag'>
+          <div className={styles['country-flag']}>
             <img src={country.flag} alt={country.name} />
           </div>
-          <div className='country-info'>
-            <h2 className='country-name'>{country.name}</h2>
-            <ul className='country-info-list'>
-              <li className='country-info-list-item'><span>Population:</span> {country.population}</li>
-              <li className='country-info-list-item'><span>Region:</span> {country.region}</li>
-              <li className='country-info-list-item'><span>Capital:</span> {country.capital}</li>
+          <div className={styles['country-info']}>
+            <h2 className={styles['country-name']}>{country.name}</h2>
+            <ul className={styles['country-info-list']}>
+              <li className={styles['country-info-list-item']}><span>Population:</span> {country.population}</li>
+              <li className={styles['country-info-list-item']}><span>Region:</span> {country.region}</li>
+              <li className={styles['country-info-list-item']}><span>Capital:</span> {country.capital}</li>
             </ul>
           </div>
         </div>

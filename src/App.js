@@ -8,6 +8,7 @@ import Search from './pages/search/Search';
 import Country from './pages/country/Country';
 
 //styles
+//import styles from './App.module.css';
 import './App.css'
 
 function App() {

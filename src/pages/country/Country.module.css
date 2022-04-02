@@ -1,0 +1,37 @@
+.country {
+  padding: 40px 30px;
+}
+
+.country-detail {
+  margin-top: 50px;
+}
+
+.country-detail-flag {
+  width: 100%;
+}
+
+.country-detail-flag img {
+  max-width: 100%;
+  height: auto;
+}
+
+.country-detail-info {
+  margin-top: 50px;
+}
+
+.country-detail-info h2 {
+  margin-bottom: 25px;
+}
+
+.country-info-list {
+  list-style-type: none;
+  margin-bottom: 30px;
+}
+
+.country-info-list-item {
+  margin-bottom: 3.5px;
+}
+
+.country-info-list-item span {
+  font-weight: 600;
+}

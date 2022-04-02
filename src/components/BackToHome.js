@@ -6,14 +6,14 @@ import LightArrow from '../assets/arrow_light.svg';
 import DarkArrow from '../assets/arrow_dark.svg';
 
 //styles
-import './BackToHome.css';
+import styles from './BackToHome.module.css';
 
 function BackToHome() {
   const { mode } = useMode()
   const history = useHistory()
 
   return (
-    <div className='back' onClick={() => history.push("/")}>
+    <div className={styles.back} onClick={() => history.push("/")}>
       <img 
         src={mode === 'light' ? LightArrow : DarkArrow}
         alt='back-icon'

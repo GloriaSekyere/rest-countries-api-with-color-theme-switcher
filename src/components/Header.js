@@ -5,16 +5,16 @@ import LightMode from '../assets/lightMode.svg'
 import DarkMode from '../assets/darkMode.svg'
 
 //styles
-import './Header.css';
+import styles from './Header.module.css';
 
 
 function Header() {
   const { mode, toggleMode } = useMode()
 
   return (
-    <div className='header'>
+    <div className={styles.header}>
       <h1>Where in the world?</h1>
-      <div className='mode-selector' onClick={() => toggleMode()}>
+      <div className={styles['mode-selector']} onClick={() => toggleMode()}>
         {mode === 'light' ? (
             <>
               <img src={LightMode} alt="light-mode-icon" />
