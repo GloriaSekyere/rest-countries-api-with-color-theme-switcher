@@ -1,6 +1,9 @@
-import CountryList from '../../components/CountryList';
-import Searchbar from '../../components/Searchbar';
 import { useFetch } from '../../hooks/useFetch';
+
+//components
+import CountryList from '../../components/CountryList';
+import Filter from '../../components/Filter';
+import Searchbar from '../../components/Searchbar';
 
 //styles
 import styles from './Home.module.css';
@@ -11,6 +14,7 @@ function Home() {
   return (
     <>
       <Searchbar />
+      <Filter />
       
       <div className={styles.home}>
         {isPending && <p>Loading countries...</p>}
