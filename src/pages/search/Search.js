@@ -13,15 +13,16 @@ function Search() {
   const queryParams = new URLSearchParams(queryString)
   const query = queryParams.get('q')
 
-  console.log(query)
   const url = `https://restcountries.com/v2/name/${query}`;
   const {data:countries, isPending, error} = useFetch(url)
 
   return (
-    <div>
+    <div className={styles.search}>
       <BackToHome />
+
       {isPending && <p>Loading countries...</p>}
       {error && <p>Uh oh, could not load countries...</p>}
+
       {countries && <CountryList countries={countries} />}
     </div>
   )
