@@ -1,4 +1,5 @@
 import { useFetch } from '../../hooks/useFetch';
+import { useState } from 'react';
 
 //components
 import CountryList from '../../components/CountryList';
@@ -8,13 +9,15 @@ import Searchbar from '../../components/Searchbar';
 //styles
 import styles from './Home.module.css';
 
+
 function Home() {
-  const { data: countries, isPending, error } = useFetch("https://restcountries.com/v2/all")
+  const [url, setUrl] = useState("https://restcountries.com/v2/all")
+  const { data: countries, isPending, error } = useFetch(url)
 
   return (
     <>
       <Searchbar />
-      <Filter />
+      <Filter setUrl={setUrl} />
       
       <div className={styles.home}>
         {isPending && <p>Loading countries...</p>}
