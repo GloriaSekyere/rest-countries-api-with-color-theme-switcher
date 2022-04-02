@@ -12,7 +12,7 @@ function Home() {
   }
 
   return (
-    <div>
+    <div className='home'>
       {isPending && <p>Loading countries...</p>}
       {error && <p>Uh oh, could not load countries...</p>}
       {countries && <CountryList countries={countries} />}
