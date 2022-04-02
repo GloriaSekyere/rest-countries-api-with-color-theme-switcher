@@ -7,8 +7,7 @@ function CountryList({ countries }) {
   const history = useHistory()
 
   const handleClick = (code) => {
-    // history.push(`/country/${name.toLowerCase()}`)
-    history.push(`/country/${code}`)
+    history.push(`/country/${code.toLowerCase()}`)
   }
   return (
     <>
