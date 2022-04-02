@@ -1,10 +1,23 @@
+import { useFetch } from '../../hooks/useFetch';
+
+//styles
 import './Home.css';
 
-import React from 'react'
-
 function Home() {
+  const { data: countries, isPending, error } = useFetch("https://restcountries.com/v2/all")
+
+  if (countries) {
+    console.log(countries)
+  }
+
   return (
-    <div>Home</div>
+    <div>
+      {countries && countries.map(country => (
+        <div key={country.alpha3Code}>
+          {country.name}
+        </div>
+      ))}
+    </div>
   )
 }
 
