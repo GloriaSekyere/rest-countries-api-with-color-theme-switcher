@@ -5,6 +5,10 @@
   --dark-blue: hsl(209, 23%, 22%);
   /* (Dark Mode Background) */
   --very-dark-blue-dark-mode-bg: hsl(207, 26%, 17%);
+  /* (Dark mode shadow) */
+  --dark-shadow: hsl(207, 24%, 16%);
+  /* (Light Mode Shadow) */
+  --light-shadow: rgb(214, 214, 214);
   /* (Light Mode Text) */ 
   --very-dark-blue-light-mode-txt: hsl(200, 15%, 8%);
   /* (Light Mode Input) */

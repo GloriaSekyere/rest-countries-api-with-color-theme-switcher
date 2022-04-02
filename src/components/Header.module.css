@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0px 0px 10px rgb(214, 214, 214);
+  box-shadow: 0px 0px 10px var(--light-shadow);
 }
 
 .header h1 {
@@ -26,8 +26,8 @@
   font-weight: 600;
 }
 
-.dark .header  {
+:global(.dark) .header  {
   background-color: var(--dark-blue);
   color: var(--white);
-  box-shadow: 0px 0px 10px hsl(207, 24%, 16%);
+  box-shadow: 0px 0px 10px var(--dark-shadow);
 }

@@ -5,7 +5,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 10px 1px rgb(214, 214, 214);
+  box-shadow: 0 0 10px 1px var(--light-shadow);
 }
 
 .back img {
@@ -18,8 +18,8 @@
   margin-left: 5px;
 }
 
-.dark .back {
+:global(.dark) .back {
   background-color: var(--dark-blue);
   color: var(--white);
-  box-shadow: 0 0 10px 1px hsl(207, 24%, 16%);
+  box-shadow: 0 0 10px 1px var(--dark-shadow);
 }

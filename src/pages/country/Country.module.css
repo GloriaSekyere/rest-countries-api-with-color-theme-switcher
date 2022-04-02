@@ -53,3 +53,13 @@
   width: 100px;
   box-shadow: 0 0 5px 1px rgb(214, 214, 214);
 }
+
+:global(.dark) .country {
+  color: var(--white);
+}
+
+:global(.dark) .border {
+  background-color: var(--dark-blue);
+  color: var(--white);
+  box-shadow: 0 0 5px 1px var(--dark-shadow);
+}
