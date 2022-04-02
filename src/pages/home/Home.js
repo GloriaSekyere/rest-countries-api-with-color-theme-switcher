@@ -1,3 +1,4 @@
+import CountryList from '../../components/CountryList';
 import { useFetch } from '../../hooks/useFetch';
 
 //styles
@@ -12,11 +13,9 @@ function Home() {
 
   return (
     <div>
-      {countries && countries.map(country => (
-        <div key={country.alpha3Code}>
-          {country.name}
-        </div>
-      ))}
+      {isPending && <p>Loading countries...</p>}
+      {error && <p>Uh oh, could not load countries...</p>}
+      {countries && <CountryList countries={countries} />}
     </div>
   )
 }

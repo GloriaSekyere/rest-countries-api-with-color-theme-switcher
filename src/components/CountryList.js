@@ -1,8 +1,14 @@
 import './CountryList.css';
 
-function CountryList() {
+function CountryList({ countries }) {
   return (
-    <div>CountryList</div>
+    <div>
+      {countries.map(country => (
+        <div key={country.alpha3Code}>
+          {country.name}
+        </div>
+      ))}
+    </div>
   )
 }
 
