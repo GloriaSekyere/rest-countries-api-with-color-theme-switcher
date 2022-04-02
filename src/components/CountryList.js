@@ -1,10 +1,22 @@
+import { useHistory } from 'react-router-dom';
+
+//styles
 import './CountryList.css';
 
 function CountryList({ countries }) {
+  const history = useHistory()
+
+  const handleClick = (name) => {
+    history.push(`/country/${name}`)
+  }
   return (
-    <div>
+    <>
       {countries.map(country => (
-        <div key={country.alpha3Code} className="country-card">
+        <div 
+          key={country.alpha3Code} 
+          className="country-card"
+          onClick={() => handleClick(country.name)}
+        >
           <div className='country-flag'>
             <img src={country.flag} alt={country.name} />
           </div>
@@ -18,7 +30,7 @@ function CountryList({ countries }) {
           </div>
         </div>
       ))}
-    </div>
+    </>
   )
 }
 
