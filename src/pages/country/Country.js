@@ -1,6 +1,6 @@
 import { useFetch } from '../../hooks/useFetch';
-import { useParams } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useParams, useHistory } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 //components
 import BackToHome from '../../components/BackToHome';
@@ -9,57 +9,83 @@ import BackToHome from '../../components/BackToHome';
 import styles from './Country.module.css';
 
 function Country() {
-  const { name } = useParams()
-  const url = `https://restcountries.com/v2/name/${name}?fullText=true`;
+  const { code } = useParams()
+  const url = `https://restcountries.com/v2/alpha/${code}`;
   const { data:country, isPending, error } = useFetch(url)
+  const [borders, setBorders] = useState(null)
+  
+  const history = useHistory()
 
   useEffect(() => {
-    if (country) {
-      console.log(country)
+    if (country && country.borders) {
+      //fetch border countries and use their fullnames in buttons
+      let bordersUrl = "https://restcountries.com/v2/alpha?codes=";
+      const codes = country.borders.map(code => code.toLowerCase())
+      codes.forEach(code => {
+        bordersUrl += `${code},`
+      })
+
+      fetch(bordersUrl)
+          .then(response => response.json())
+          .then(data => setBorders(data))
+          .catch(err => console.log(err.message))
     }
   }, [country])
+
+  const handleBorderClick = (border) => {
+    setBorders([])
+    history.push(`/country/${border}`)
+  }
 
   return (
     <div className={styles.country}>
       <BackToHome />
+
       {isPending && <p>Loading country...</p>}
       {error && <p>Uh oh, could not load country...</p>}
+
       {country && (
         <div className={styles['country-detail']}>
           <div className={styles['country-detail-flag']}>
             <img 
-              src={country[0].flag}
-              alt={`flag of ${country[0].name}`}
+              src={country.flag}
+              alt={`flag of ${country.name}`}
             />
           </div>
 
           <div className={styles['country-detail-info']}>
-            <h2>{country[0].name}</h2>
+            <h2>{country.name}</h2>
 
             <ul className={styles['country-info-list']}>
-              <li className={styles['country-info-list-item']}><span>Native Name: </span>{country[0].nativeName}</li>
-              <li className={styles['country-info-list-item']}><span>Population: </span>{country[0].population}</li>
-              <li className={styles['country-info-list-item']}><span>Region: </span>{country[0].region}</li>
-              <li className={styles['country-info-list-item']}><span>Sub Region: </span>{country[0].subregion}</li>
-              <li className={styles['country-info-list-item']}><span>Capital: </span>{country[0].capital}</li>
+              <li className={styles['country-info-list-item']}><span>Native Name: </span>{country.nativeName}</li>
+              <li className={styles['country-info-list-item']}><span>Population: </span>{country.population}</li>
+              <li className={styles['country-info-list-item']}><span>Region: </span>{country.region}</li>
+              <li className={styles['country-info-list-item']}><span>Sub Region: </span>{country.subregion}</li>
+              <li className={styles['country-info-list-item']}><span>Capital: </span>{country.capital}</li>
             </ul>
 
             <ul className={styles['country-info-list']}>
-              <li className={styles['country-info-list-item']}><span>Top Level Domain: </span>{country[0].topLevelDomain}</li>
-              <li className={styles['country-info-list-item']}><span>Currencies: </span>{country[0].currencies.map(cur => cur.name)}</li>
-              <li className={styles['country-info-list-item']}><span>Languages: </span>{country[0].languages.map(lang => lang.name)}</li>
-            </ul>
-
-            <div className='border-countries'>
-              <h3>Border Countries</h3>
-              {country[0].borders.map(border => (
-                <div>{border}</div>
-              ))}
-            </div>
-            
+              <li className={styles['country-info-list-item']}><span>Top Level Domain: </span>{country.topLevelDomain}</li>
+              <li className={styles['country-info-list-item']}><span>Currencies: </span>{country.currencies && country.currencies.map(cur => cur.name)}</li>
+              <li className={styles['country-info-list-item']}><span>Languages: </span>{country.languages && country.languages.map(lang => lang.name)}</li>
+            </ul>         
           </div>
         </div>
       )}
+
+      <div className={styles['border-countries']}>
+        {borders && <h3>Border Countries</h3>}
+        <div className={styles['borders']}>
+          {borders && borders.map(border => (
+            <button 
+              key={border.alpha3Code}
+              className={styles.border}
+              onClick={() => handleBorderClick(border.alpha3Code)}
+            >{border.name}</button>
+          ))}
+        </div>
+      </div>
+
     </div>
   )
 }
