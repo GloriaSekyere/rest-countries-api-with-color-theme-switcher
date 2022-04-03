@@ -2,10 +2,18 @@
   min-height: 100vh;
 }
 
+.pending, .error {
+  padding: 15px 0;
+}
+
 .light {
   background-color: var(--very-light-gray);
 }
 
 .dark {
   background-color: var(--very-dark-blue-dark-mode-bg);
+}
+
+.dark .pending, .dark .error {
+  color: var(--white);
 }

@@ -20,8 +20,8 @@ function Search() {
     <div className={styles.search}>
       <BackToHome />
 
-      {isPending && <p>Loading countries...</p>}
-      {error && <p>Uh oh, could not load countries...</p>}
+      {isPending && <p className='pending'>Loading countries...</p>}
+      {error && <p className='error'>Uh oh, could not load countries...</p>}
 
       {countries && <CountryList countries={countries} />}
     </div>

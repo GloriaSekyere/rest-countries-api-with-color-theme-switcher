@@ -41,8 +41,8 @@ function Country() {
     <div className={styles.country}>
       <BackToHome />
 
-      {isPending && <p>Loading country...</p>}
-      {error && <p>Uh oh, could not load country...</p>}
+      {isPending && <p className='pending'>Loading country...</p>}
+      {error && <p className='error'>Uh oh, could not load country...</p>}
 
       {country && (
         <div className={styles['country-detail']}>
