@@ -11,3 +11,9 @@
   padding: 0 5%;
   box-shadow: 0 0 10px var(--light-shadow);
 }
+
+:global(.dark) .filter-select {
+  color: var(--white);
+  background-color: var(--dark-blue);
+  box-shadow: 0 0 10px var(--dark-shadow);
+}

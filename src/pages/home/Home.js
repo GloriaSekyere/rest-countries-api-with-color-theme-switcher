@@ -11,13 +11,21 @@ import styles from './Home.module.css';
 
 
 function Home() {
-  const [url, setUrl] = useState("https://restcountries.com/v2/all")
+  const fields = "?fields=name,population,region,capital,flags,cca3"
+  const [url, setUrl] = useState(`https://restcountries.com/v3.1/all${fields}`)
   const { data: countries, isPending, error } = useFetch(url)
+
+  const handleFilter = (filterUrl) => {
+    setUrl(filterUrl)
+  }
 
   return (
     <>
       <Searchbar />
-      {/* <Filter setUrl={setUrl} /> */}
+      <Filter 
+        handleFilter={handleFilter}
+        fields={fields}
+      />
       
       <div className={styles.home}>
         {isPending && <p>Loading countries...</p>}
@@ -28,4 +36,4 @@ function Home() {
   )
 }
 
-export default Home
+export default Home;

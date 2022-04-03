@@ -13,15 +13,15 @@ function CountryList({ countries }) {
     <>
       {countries.map(country => (
         <div 
-          key={country.alpha3Code} 
+          key={country.cca3} 
           className={styles['country-card']}
-          onClick={() => handleClick(country.alpha3Code)}
+          onClick={() => handleClick(country.cca3)}
         >
           <div className={styles['country-flag']}>
-            <img src={country.flag} alt={country.name} />
+            <img src={country.flags.svg} alt={country.name.common} />
           </div>
           <div className={styles['country-info']}>
-            <h2 className={styles['country-name']}>{country.name}</h2>
+            <h2 className={styles['country-name']}>{country.name.common}</h2>
             <ul className={styles['country-info-list']}>
               <li className={styles['country-info-list-item']}><span>Population:</span> {country.population}</li>
               <li className={styles['country-info-list-item']}><span>Region:</span> {country.region}</li>

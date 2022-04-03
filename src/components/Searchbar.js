@@ -15,29 +15,33 @@ function Searchbar() {
   const [search, setSearch] = useState('')
   const history = useHistory()
 
-  const handleSearch = () => {
+  const handleSearch = (e) => {
+    e.preventDefault()
     history.push(`/search?q=${search}`)
+    setSearch('')
   }
 
   return (
-    <label className={styles.search}>
-      <div 
-        className={styles['search-icon']}
-        onClick={handleSearch}
-      >
-        <img
-          src={mode === 'light' ? SearchLight : SearchDark}
-          alt="search-icon" 
+    <form onSubmit={handleSearch}>
+      <label className={styles.search}>
+        <button
+          className={styles['search-icon']}
+          onClick={handleSearch}
+        >
+          <img
+            src={mode === 'light' ? SearchLight : SearchDark}
+            alt="search-icon" 
+          />
+        </button>
+        <input
+          className={styles['search-input']}
+          type='text'
+          value={search}
+          placeholder="Search for a country..."
+          onChange={(e) => setSearch(e.target.value)}
         />
-      </div>
-      <input
-        className={styles['search-input']}
-        type='text'
-        value={search}
-        placeholder="Search for a country..."
-        onChange={(e) => setSearch(e.target.value)}
-      />
-    </label>
+      </label>
+    </form>
   )
 }
 

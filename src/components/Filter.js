@@ -1,20 +1,15 @@
-import { useState } from 'react';
-
 //styles
 import styles from './Filter.module.css';
 
-
-function Filter({ setUrl }) {
-
-  const handleRegion = (e) => {
-    setUrl(`https://restcountries.com/v2/continent/${e.target.value}`)
-  }
+function Filter({ handleFilter, fields }) {
 
   return (
     <label className={styles.filter}>
       <select 
         className={styles['filter-select']}
-        onChange={e => handleRegion(e)}
+        onChange={e => handleFilter(
+          `https://restcountries.com/v3.1/region/${e.target.value}${fields}`
+        )}
       >
         <option value=''>Filter By Region</option>
         <option value='africa'>Africa</option>
@@ -27,4 +22,4 @@ function Filter({ setUrl }) {
   )
 }
 
-export default Filter
+export default Filter;

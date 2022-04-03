@@ -13,6 +13,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: transparent;
+  border: none;
 }
 
 .search-input {
@@ -25,6 +27,7 @@
 }
 
 :global(.dark) .search-input {
+  color: var(--white);
   background-color: var(--dark-blue);
   box-shadow: 0 0 10px var(--dark-shadow);
 }
