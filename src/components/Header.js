@@ -14,7 +14,7 @@ function Header() {
   const [isScrolling, setIsScrolling] = useState(false)
   
   const handleScroll = () => {
-    if (window.scrollY >= 200) {
+    if (window.scrollY >= 75) {
       setIsScrolling(true)
     } else {
       setIsScrolling(false)
