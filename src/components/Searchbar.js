@@ -17,8 +17,10 @@ function Searchbar() {
 
   const handleSearch = (e) => {
     e.preventDefault()
-    history.push(`/search?q=${search}`)
-    setSearch('')
+    if (search) {
+      history.push(`/search?q=${search}`)
+      setSearch('')
+    }
   }
 
   return (
