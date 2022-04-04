@@ -4,13 +4,14 @@ export const useFetch = (url) => {
   const [data, setData] = useState(null);
   const [isPending, setIsPending] = useState(false);
   const [error, setError] = useState(null);
-
+  
   useEffect(() => {
-    setIsPending(true)
-
+    const controller = new AbortController;
+    
     const fetchData = async () => {
+      setIsPending(true)
       try {
-        let response = await fetch(url)
+        let response = await fetch(url, { signal: controller.signal })
         if (response.ok) {
           let data = await response.json()
           setData(data)
@@ -27,6 +28,10 @@ export const useFetch = (url) => {
     }
     
     fetchData()
+
+    return () => {
+      controller.abort()
+    }
 
   }, [url])
 
