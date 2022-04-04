@@ -5,7 +5,7 @@
   display: grid;
   place-content: center;
   background-color: var(--white);
-  box-shadow: 0 0 10px 5px var(--light-shadow);
+  box-shadow: 0 0 10px 2.5px var(--light-shadow);
   position: fixed;
   right: 5vw;
   bottom: 2vh;
@@ -14,5 +14,5 @@
 
 :global(.dark) .to-top {
   background-color: var(--dark-blue);
-  box-shadow: 0 0 10px 5px var(--dark-shadow);
+  box-shadow: 0 0 10px 2.5px var(--dark-shadow);
 }
