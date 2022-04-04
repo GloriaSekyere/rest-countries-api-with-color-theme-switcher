@@ -6,6 +6,7 @@ import Header from './components/Header'
 import Home from './pages/home/Home';
 import Search from './pages/search/Search';
 import Country from './pages/country/Country';
+import BackToTop from './components/BackToTop';
 
 //styles
 //import styles from './App.module.css';
@@ -30,6 +31,7 @@ function App() {
           </Route>
         </Switch>
       </BrowserRouter>
+      <BackToTop />
     </div>
   );
 }
