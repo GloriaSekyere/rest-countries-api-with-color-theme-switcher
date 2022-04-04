@@ -38,6 +38,28 @@
   font-weight: 600;
 }
 
+.show-button-div {
+  width: 100%;
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+}
+
+.show-button {
+  width: 100px;
+  padding: 10px;
+  margin: 0 auto 50px;
+  border: none;
+  background-color: var(--white);
+  box-shadow: 0 0 10px 1px var(--light-shadow);
+}
+
+:global(.dark) .show-button {
+  color: var(--white);
+  background-color: var(--dark-blue);
+  box-shadow: 0 0 10px 1px var(--dark-shadow);
+}
+
 :global(.dark) .country-card {
   background-color: var(--dark-blue);
 }

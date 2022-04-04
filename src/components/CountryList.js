@@ -1,21 +1,35 @@
 import { useHistory } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
 //styles
 import styles from './CountryList.module.css';
 
 function CountryList({ countries }) {
   const history = useHistory()
+  const [showValue, setShowValue] = useState(50);
+  const [isVisible, setIsVisible] = useState(true)
 
-  const handleClick = (code) => {
+  const handleCountryClick = (code) => {
     history.push(`/country/${code.toLowerCase()}`)
   }
+
+  useEffect(() => {
+    if (showValue >= countries.length) {
+      setIsVisible(false)
+    }
+  }, [showValue])
+
+  const handleShowMore = () => {
+    setShowValue(prevValue => prevValue +  50)
+  }
+
   return (
     <>
-      {countries.map(country => (
+      {countries.slice(0, showValue).map(country => (
         <div 
           key={country.cca3} 
           className={styles['country-card']}
-          onClick={() => handleClick(country.cca3)}
+          onClick={() => handleCountryClick(country.cca3)}
         >
           <div className={styles['country-flag']}>
             <img src={country.flags.svg} alt={country.name.common} />
@@ -30,6 +44,13 @@ function CountryList({ countries }) {
           </div>
         </div>
       ))}
+
+      {isVisible && (<div className={styles['show-button-div']}>
+        <button 
+          className={styles['show-button']}
+          onClick={handleShowMore}
+        >Show more</button>
+      </div>)}
     </>
   )
 }

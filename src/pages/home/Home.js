@@ -11,10 +11,10 @@ import styles from './Home.module.css';
 
 
 function Home() {
-  const fields = "?fields=name,population,region,capital,flags,cca3"
-  const [url, setUrl] = useState(`https://restcountries.com/v3.1/all${fields}`)
-  const { data: countries, isPending, error } = useFetch(url)
-
+  const fields = "?fields=name,population,region,capital,flags,cca3";
+  const [url, setUrl] = useState(`https://restcountries.com/v3.1/all${fields}`);
+  const { data: countries, isPending, error } = useFetch(url);
+  
   const handleFilter = (filterUrl) => {
     setUrl(filterUrl)
   }
