@@ -13,7 +13,7 @@ function Search() {
   const queryParams = new URLSearchParams(queryString)
   const query = queryParams.get('q')
 
-  const url = `https://restcountries.com/v2/name/${query}`;
+  const url = `https://restcountries.com/v3.1/name/${query}`;
   const {data:countries, isPending, error} = useFetch(url)
 
   return (
