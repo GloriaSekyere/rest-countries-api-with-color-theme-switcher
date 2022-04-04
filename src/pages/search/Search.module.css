@@ -2,3 +2,9 @@
   padding: 30px 40px;
   margin: auto;
 }
+
+.resultsText {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 15px;
+}

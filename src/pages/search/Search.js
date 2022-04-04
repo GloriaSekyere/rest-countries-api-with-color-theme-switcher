@@ -1,5 +1,6 @@
 import { useLocation } from 'react-router-dom';
 import { useFetch } from '../../hooks/useFetch';
+//import { useEffect } from 'react';
 
 //components
 import BackToHome from '../../components/BackToHome';
@@ -7,6 +8,7 @@ import CountryList from '../../components/CountryList';
 
 //styles
 import styles from './Search.module.css';
+
 
 function Search() {
   const queryString = useLocation().search
@@ -16,6 +18,10 @@ function Search() {
   const url = `https://restcountries.com/v3.1/name/${query}`;
   const {data:countries, isPending, error} = useFetch(url)
 
+  // useEffect(() => {
+  //   console.log(countries)
+  // }, [countries])
+
   return (
     <div className={styles.search}>
       <BackToHome />
@@ -23,6 +29,7 @@ function Search() {
       {isPending && <p className='pending'>Loading countries...</p>}
       {error && <p className='error'>Uh oh, could not load countries...</p>}
 
+      <p className={styles.resultsText}>Showing results for "{query}"</p>
       {countries && <CountryList countries={countries} />}
     </div>
   )
