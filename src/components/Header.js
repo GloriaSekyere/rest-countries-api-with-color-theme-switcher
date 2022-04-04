@@ -1,4 +1,5 @@
 import { useMode } from '../hooks/useMode'
+import { useState } from 'react';
 
 // assets
 import LightMode from '../assets/lightMode.svg'
@@ -10,9 +11,24 @@ import styles from './Header.module.css';
 
 function Header() {
   const { mode, toggleMode } = useMode()
+  const [isScrolling, setIsScrolling] = useState(false)
+  
+  const handleScroll = () => {
+    if (window.scrollY >= 200) {
+      setIsScrolling(true)
+    } else {
+      setIsScrolling(false)
+    }
+  }
+
+  window.addEventListener('scroll', handleScroll)
 
   return (
-    <div className={styles.header}>
+    <div 
+      className={
+        isScrolling ?  `${styles['header']} ${styles['scroll']}` : styles['header']
+      }
+    >
       <h1>Where in the world?</h1>
       <div className={styles['mode-selector']} onClick={() => toggleMode()}>
         {mode === 'light' ? (
