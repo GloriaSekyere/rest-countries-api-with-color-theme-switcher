@@ -28,7 +28,7 @@ function App() {
   window.addEventListener('scroll', handleBackToTop)
 
   return (
-    <div className={`App ${mode}`}>
+    <main className={`App ${mode}`}>
       <Header />
 
       <BrowserRouter basename="/rest-countries-api-with-color-theme-switcher">
@@ -46,7 +46,7 @@ function App() {
       </BrowserRouter>
 
       {isBackToTopVisible && <BackToTop />}
-    </div>
+    </main>
   );
 }
 

@@ -29,7 +29,7 @@ function Searchbar() {
       onSubmit={handleSearch}
     >
       <label>
-        <button
+        <span
           className={styles['search-icon']}
           onClick={handleSearch}
         >
@@ -37,7 +37,7 @@ function Searchbar() {
             src={mode === 'light' ? SearchLight : SearchDark}
             alt="search-icon" 
           />
-        </button>
+        </span>
         <input
           className={styles['search-input']}
           type='text'

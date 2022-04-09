@@ -12,9 +12,7 @@
   width: 15%;
   display: flex;
   justify-content: center;
-  align-items: center;
-  background-color: transparent;
-  border: none;
+  align-items: center;  
 }
 
 .search-input {
