@@ -20,19 +20,26 @@ function Home() {
   }
 
   return (
-    <>
-      <Searchbar />
-      <Filter 
-        handleFilter={handleFilter}
-        fields={fields}
-      />
+    <div className={styles.home}>
+      <div className={styles.inputs}>
+        <div className={styles.searchDiv}>
+          <Searchbar />
+        </div>
+        <div className={styles.filterDiv}>
+          <Filter 
+            handleFilter={handleFilter}
+            fields={fields}
+          />
+        </div>
+      </div>
       
-      <div className={styles.home}>
-        {isPending && <p className='pending'>Loading countries...</p>}
-        {error && <p className='error'>Uh oh, could not load countries...</p>}
+      {isPending && <p className='pending'>Loading countries...</p>}
+      {error && <p className='error'>Uh oh, could not load countries...</p>}
+
+      <div className={styles.countryList}>
         {countries && <CountryList countries={countries} />}
       </div>
-    </>
+    </div>
   )
 }
 

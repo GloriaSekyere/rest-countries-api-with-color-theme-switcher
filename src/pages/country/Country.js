@@ -55,20 +55,21 @@ function Country() {
 
           <div className={styles['country-detail-info']}>
             <h2>{country.name}</h2>
+            <div>
+              <ul className={styles['country-info-list']}>
+                <li className={styles['country-info-list-item']}><span>Native Name: </span>{country.nativeName}</li>
+                <li className={styles['country-info-list-item']}><span>Population: </span>{country.population}</li>
+                <li className={styles['country-info-list-item']}><span>Region: </span>{country.region}</li>
+                <li className={styles['country-info-list-item']}><span>Sub Region: </span>{country.subregion}</li>
+                <li className={styles['country-info-list-item']}><span>Capital: </span>{country.capital}</li>
+              </ul>
 
-            <ul className={styles['country-info-list']}>
-              <li className={styles['country-info-list-item']}><span>Native Name: </span>{country.nativeName}</li>
-              <li className={styles['country-info-list-item']}><span>Population: </span>{country.population}</li>
-              <li className={styles['country-info-list-item']}><span>Region: </span>{country.region}</li>
-              <li className={styles['country-info-list-item']}><span>Sub Region: </span>{country.subregion}</li>
-              <li className={styles['country-info-list-item']}><span>Capital: </span>{country.capital}</li>
-            </ul>
-
-            <ul className={styles['country-info-list']}>
-              <li className={styles['country-info-list-item']}><span>Top Level Domain: </span>{country.topLevelDomain}</li>
-              <li className={styles['country-info-list-item']}><span>Currencies: </span>{country.currencies && country.currencies.map(cur => cur.name)}</li>
-              <li className={styles['country-info-list-item']}><span>Languages: </span>{country.languages && country.languages.map(lang => lang.name)}</li>
-            </ul>         
+              <ul className={styles['country-info-list']}>
+                <li className={styles['country-info-list-item']}><span>Top Level Domain: </span>{country.topLevelDomain}</li>
+                <li className={styles['country-info-list-item']}><span>Currencies: </span>{country.currencies && country.currencies.map(cur => cur.name)}</li>
+                <li className={styles['country-info-list-item']}><span>Languages: </span>{country.languages && country.languages.map(lang => lang.name)}</li>
+              </ul> 
+            </div>        
           </div>
         </div>
       )}

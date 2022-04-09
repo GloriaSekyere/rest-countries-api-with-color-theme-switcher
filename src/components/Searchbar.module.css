@@ -1,6 +1,6 @@
 .search {
   display: block;
-  width: 85%;
+  width: 100%;
   margin: 25px auto;
   position: relative;
 }
@@ -30,4 +30,19 @@
   color: var(--white);
   background-color: var(--dark-blue);
   box-shadow: 0 0 10px var(--dark-shadow);
+}
+
+
+@media screen and (min-width: 1024px) {
+  .search {
+    width: 100%;
+    margin: 0;
+    position: relative;
+  }
+}
+
+@media screen and (min-width: 1536px) {
+  .search-input {
+    height: 55px;
+  }
 }

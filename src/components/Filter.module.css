@@ -1,11 +1,11 @@
 .filter {
   display: block;
-  width: 85%;
+  width: 100%;
   margin: auto;
 }
 
 .filter-select {
-  width: 50%;
+  width: 60%;
   height: 45px;
   border: none;
   padding: 0 5%;
@@ -17,4 +17,22 @@
   color: var(--white);
   background-color: var(--dark-blue);
   box-shadow: 0 0 10px var(--dark-shadow);
+}
+
+
+@media screen and (min-width: 1024px) {
+  .filter {
+    width: 100%;
+    margin: 0;
+    position: relative;
+  }
+  .filter-select {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1536px) {
+  .filter-select {
+    height: 55px;
+  }
 }

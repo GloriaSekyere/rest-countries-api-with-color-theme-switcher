@@ -16,3 +16,16 @@
   background-color: var(--dark-blue);
   box-shadow: 0 0 10px 2.5px var(--dark-shadow);
 }
+
+
+@media screen and (min-width: 1024px) {
+  .to-top {
+    right: 2.5vw;
+  }
+}
+
+@media screen and (min-width: 1536px) {
+  .to-top {
+    right: 2vw;
+  }
+}

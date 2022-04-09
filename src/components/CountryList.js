@@ -6,7 +6,7 @@ import styles from './CountryList.module.css';
 
 function CountryList({ countries }) {
   const history = useHistory()
-  const [showValue, setShowValue] = useState(50);
+  const [showValue, setShowValue] = useState(48);
   const [isVisible, setIsVisible] = useState(true)
 
   const handleCountryClick = (code) => {
@@ -20,11 +20,12 @@ function CountryList({ countries }) {
   }, [showValue])
 
   const handleShowMore = () => {
-    setShowValue(prevValue => prevValue +  50)
+    setShowValue(prevValue => prevValue + 24)
   }
 
   return (
     <>
+      <div className={styles.countryList}>
       {countries.slice(0, showValue).map(country => (
         <div 
           key={country.cca3} 
@@ -44,6 +45,7 @@ function CountryList({ countries }) {
           </div>
         </div>
       ))}
+      </div>
 
       {isVisible && (<div className={styles['show-button-div']}>
         <button 

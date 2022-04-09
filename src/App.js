@@ -18,7 +18,7 @@ function App() {
   const [isBackToTopVisible, setIsBackToTopVisible] = useState(false)
 
   const handleBackToTop = () => {
-    if (window.scrollY >= 2500){
+    if (window.scrollY >= 1000){
       setIsBackToTopVisible(true)
     } else {
       setIsBackToTopVisible(false)

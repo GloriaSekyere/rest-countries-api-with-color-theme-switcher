@@ -1,4 +1,49 @@
 .home {
   padding: 30px 40px;
+}
+
+.countryList {
   margin: auto;
+  width: 100%;
+}
+
+
+@media screen and (min-width: 1024px) {
+  .inputs {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 25px 0;
+  }
+  .searchDiv {
+    flex-basis: 60%;
+  }
+  .filterDiv {
+    flex-basis: 25%;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .home {
+    padding: 25px 75px;
+    width: 100%;
+  }
+  .countryList {
+    width: 100%;
+    margin: auto;
+  }
+}
+
+@media screen and (min-width: 1536px) {
+  .home {
+    padding: 50px 75px;
+    max-width: 1500px;
+    margin: auto;
+  }
+  .inputs {
+    max-width: 1500px;
+    margin: 0;
+    margin-bottom: 25px;
+  }
 }

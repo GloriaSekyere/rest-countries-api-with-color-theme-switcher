@@ -24,8 +24,11 @@ function Searchbar() {
   }
 
   return (
-    <form onSubmit={handleSearch}>
-      <label className={styles.search}>
+    <form 
+      className={styles.search}
+      onSubmit={handleSearch}
+    >
+      <label>
         <button
           className={styles['search-icon']}
           onClick={handleSearch}
