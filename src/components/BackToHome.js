@@ -1,4 +1,4 @@
-import { useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useMode } from '../hooks/useMode';
 
 //assets 
@@ -10,16 +10,15 @@ import styles from './BackToHome.module.css';
 
 function BackToHome() {
   const { mode } = useMode()
-  const history = useHistory()
 
   return (
-    <div className={styles.back} onClick={() => history.push("/")}>
+    <Link className={styles.back} to="/">
       <img 
         src={mode === 'light' ? LightArrow : DarkArrow}
         alt='back-icon'
       />
       <span>Back</span>
-    </div>
+    </Link>
   )
 }
 
