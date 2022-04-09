@@ -31,7 +31,7 @@ function App() {
     <div className={`App ${mode}`}>
       <Header />
 
-      <BrowserRouter>
+      <BrowserRouter basename="/rest-countries-api-with-color-theme-switcher">
         <Switch>
           <Route exact path="/">
             <Home />
