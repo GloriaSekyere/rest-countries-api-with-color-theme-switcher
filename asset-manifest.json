@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/rest-countries-api-with-color-theme-switcher/static/css/main.207d2c72.css",
+    "main.js": "/rest-countries-api-with-color-theme-switcher/static/js/main.e0e5d0b2.js",
+    "index.html": "/rest-countries-api-with-color-theme-switcher/index.html",
+    "static/media/darkMode.svg": "/rest-countries-api-with-color-theme-switcher/static/media/darkMode.a76aff9a222a4780505e689c7257d6e5.svg",
+    "static/media/lightMode.svg": "/rest-countries-api-with-color-theme-switcher/static/media/lightMode.fdb51e7c4ec36ce7cfc7ad965dfe4ab0.svg",
+    "static/media/search_dark.svg": "/rest-countries-api-with-color-theme-switcher/static/media/search_dark.66ea5ec3d91c7a187e14c38039638f71.svg",
+    "static/media/search_light.svg": "/rest-countries-api-with-color-theme-switcher/static/media/search_light.6c95e853cf5a1eedd6e285cecedda3a3.svg",
+    "static/media/arrow_dark.svg": "/rest-countries-api-with-color-theme-switcher/static/media/arrow_dark.56c37eefe3ee3578a006d3989862ebdb.svg",
+    "static/media/arrow_light.svg": "/rest-countries-api-with-color-theme-switcher/static/media/arrow_light.4d7b06c4dc5e9eb092b4dd3b98f50305.svg",
+    "static/media/arrow_top_dark.svg": "/rest-countries-api-with-color-theme-switcher/static/media/arrow_top_dark.f0cc1e85133e1cfbb25e77ddeac69565.svg",
+    "static/media/arrow_top_light.svg": "/rest-countries-api-with-color-theme-switcher/static/media/arrow_top_light.fce0db3af921868ac2f3adc0e9704c4c.svg",
+    "main.207d2c72.css.map": "/rest-countries-api-with-color-theme-switcher/static/css/main.207d2c72.css.map",
+    "main.e0e5d0b2.js.map": "/rest-countries-api-with-color-theme-switcher/static/js/main.e0e5d0b2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.207d2c72.css",
+    "static/js/main.e0e5d0b2.js"
+  ]
+}
