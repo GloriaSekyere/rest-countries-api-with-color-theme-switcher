@@ -6,7 +6,7 @@ function Filter({ handleFilter, fields }) {
   return (
     <label className={styles.filter}>
       <select 
-        name="filter"
+        aria-label="Filter"
         className={styles['filter-select']}
         onChange={e => handleFilter(
           `https://restcountries.com/v3.1/region/${e.target.value}${fields}`
