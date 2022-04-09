@@ -9,6 +9,10 @@
   margin-bottom: 15px;
 }
 
+:global(.dark) .resultsText {
+  color: var(--white);
+}
+
 @media screen and (min-width: 1536px) {
   .search {
     padding: 50px 75px;
