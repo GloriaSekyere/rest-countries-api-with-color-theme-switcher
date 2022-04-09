@@ -9,7 +9,7 @@
   position: fixed;
   right: 5vw;
   bottom: 2vh;
-
+  cursor: pointer;
 }
 
 :global(.dark) .to-top {

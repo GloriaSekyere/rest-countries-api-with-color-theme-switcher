@@ -53,6 +53,7 @@
   border: none;
   width: 100px;
   box-shadow: 0 0 5px 1px rgb(214, 214, 214);
+  cursor: pointer;
 }
 
 :global(.dark) .country {
